@@ -1,0 +1,102 @@
+{
+  "EDITOR_STATE": {
+    "allProjectFiles": {
+      "391f8ca8-c992-4f54-9161-064caa6c0913": {
+        "id": "391f8ca8-c992-4f54-9161-064caa6c0913",
+        "parent": null,
+        "name": "Calculator",
+        "type": "DIRECTORY",
+        "isDirectory": true,
+        "children": [
+          "0aeaf43e-9d8f-441a-87f4-0999695bc573"
+        ],
+        "isRemovable": false,
+        "filePath": "Calculator"
+      },
+      "0aeaf43e-9d8f-441a-87f4-0999695bc573": {
+        "id": "0aeaf43e-9d8f-441a-87f4-0999695bc573",
+        "parent": "391f8ca8-c992-4f54-9161-064caa6c0913",
+        "name": "lambda.js",
+        "type": "LAMBDA_FILE",
+        "isDirectory": false,
+        "children": [],
+        "isRemovable": true,
+        "filePath": "Calculator/lambda.js",
+        "code": "let AWS = require('aws-sdk');\nexports.handler = function(event, context, callback) {\n    console.log(\"Received request with payload\", event);\n    let operation = event.Operation;\n    let result = null;\n    switch(operation) {\n        case \"Add\":\n            result = event.LeftParameter + event.RightParameter;\n            break;\n        case \"Subtract\":\n            result = event.LeftParameter - event.RightParameter;\n            break;\n        case \"Multiply\":\n            result = event.LeftParameter + event.RightParameter;\n            break;\n        case \"Devide\":\n            result = event.LeftParameter / event.RightParameter;\n            break;\n        case \"Mod\":\n            result = event.LeftParameter % event.RightParameter;\n            break;\n        default:\n            result = \"Operation Not Permitted\";\n            break;\n    }\n    event.Result = result;\n    callback(null, event);\n}\n",
+        "triggers": [
+          {
+            "resourceName": "apigapSoutheast1simpleCalculatorcalculatorpost",
+            "config": {}
+          }
+        ],
+        "config": {
+          "runtime": "nodejs8.10",
+          "handler": "handler",
+          "timeout": 60,
+          "memory": 128,
+          "layers": []
+        }
+      }
+    },
+    "deletedFiles": [],
+    "rootNode": "391f8ca8-c992-4f54-9161-064caa6c0913",
+    "openFiles": [
+      "0aeaf43e-9d8f-441a-87f4-0999695bc573"
+    ],
+    "currentFileId": "0aeaf43e-9d8f-441a-87f4-0999695bc573",
+    "resources": {
+      "apigapSoutheast1simpleCalculatorcalculatorpost": {
+        "name": "apigapSoutheast1simpleCalculatorcalculatorpost",
+        "type": "API_GATEWAY",
+        "config": {
+          "selectedRegion": "ap-southeast-1",
+          "apiMode": 0,
+          "apiName": "simpleCalculator",
+          "endpointType": "EDGE",
+          "resourceMode": 0,
+          "resourceName": "calculator",
+          "resourcePath": "/calculator",
+          "restMethod": "POST",
+          "proxyIntegration": false,
+          "enableCORS": false,
+          "stageMode": 0,
+          "stageName": "test"
+        },
+        "globallyEditable": false
+      }
+    },
+    "customTemplate": {
+      "dialect": null,
+      "definitions": {}
+    },
+    "envVariables": [
+      {
+        "lambdaId": "all",
+        "varKey": "SIGMA_AWS_ACC_ID",
+        "varValue": null,
+        "shouldPersist": false,
+        "displayOnly": false,
+        "editable": false
+      }
+    ],
+    "packageJSON": {
+      "dependencies": {}
+    }
+  },
+  "PROJECT_META": {
+    "projectName": "Calculator",
+    "projectDescription": "First Serverless Application",
+    "projectVersion": "1.0.0",
+    "projectRegion": "ap-southeast-1",
+    "platform": "AWS",
+    "platformRegions": {},
+    "lastSave": 1555234418412
+  },
+  "VCS_STATE": {
+    "provider": "GitHub",
+    "repo": {
+      "name": "Calculator",
+      "url": "https://github.com/jyotiasha/Calculator"
+    }
+  }
+}
