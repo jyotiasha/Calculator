@@ -1,31 +1,31 @@
 {
   "EDITOR_STATE": {
     "allProjectFiles": {
-      "391f8ca8-c992-4f54-9161-064caa6c0913": {
-        "id": "391f8ca8-c992-4f54-9161-064caa6c0913",
+      "a48f624b-2dad-477b-b172-67a9cb01cd3f": {
+        "id": "a48f624b-2dad-477b-b172-67a9cb01cd3f",
         "parent": null,
-        "name": "Calculator",
+        "name": "calculator",
         "type": "DIRECTORY",
         "isDirectory": true,
         "children": [
-          "0aeaf43e-9d8f-441a-87f4-0999695bc573"
+          "d8f47e6e-174d-4ad3-beef-7b81abb3e24a"
         ],
         "isRemovable": false,
-        "filePath": "Calculator"
+        "filePath": "calculator"
       },
-      "0aeaf43e-9d8f-441a-87f4-0999695bc573": {
-        "id": "0aeaf43e-9d8f-441a-87f4-0999695bc573",
-        "parent": "391f8ca8-c992-4f54-9161-064caa6c0913",
+      "d8f47e6e-174d-4ad3-beef-7b81abb3e24a": {
+        "id": "d8f47e6e-174d-4ad3-beef-7b81abb3e24a",
+        "parent": "a48f624b-2dad-477b-b172-67a9cb01cd3f",
         "name": "lambda.js",
         "type": "LAMBDA_FILE",
         "isDirectory": false,
         "children": [],
         "isRemovable": true,
-        "filePath": "Calculator/lambda.js",
-        "code": "let AWS = require('aws-sdk');\nexports.handler = function(event, context, callback) {\n    console.log(\"Received request with payload\", event);\n    let operation = event.Operation;\n    let result = null;\n    switch(operation) {\n        case \"Add\":\n            result = event.LeftParameter + event.RightParameter;\n            break;\n        case \"Subtract\":\n            result = event.LeftParameter - event.RightParameter;\n            break;\n        case \"Multiply\":\n            result = event.LeftParameter + event.RightParameter;\n            break;\n        case \"Devide\":\n            result = event.LeftParameter / event.RightParameter;\n            break;\n        case \"Mod\":\n            result = event.LeftParameter % event.RightParameter;\n            break;\n        default:\n            result = \"Operation Not Permitted\";\n            break;\n    }\n    event.Result = result;\n    callback(null, event);\n}\n",
+        "filePath": "calculator/lambda.js",
+        "code": "let AWS = require('aws-sdk');\nexports.handler = function(event, context, callback) {\n    console.log(\"Received request with payload\", event);\n    let operation = event.Operation;\n    let result = null;\n    switch(operation) {\n        case \"Add\":\n            result = event.LeftParameter + event.RightParameter;\n            break;\n        case \"Subtract\":\n            result = event.LeftParameter - event.RightParameter;\n            break;\n        case \"Multiply\":\n            result = event.LeftParameter + event.RightParameter;\n            break;\n        case \"Devide\":\n            result = event.LeftParameter / event.RightParameter;\n            break;\n        case \"Mod\":\n            result = event.LeftParameter % event.RightParameter;\n            break;\n        default:\n            result = \"Operation Not Permitted\";\n            break;\n    }\n    event.Result = result;\n    callback(null, event);\n}",
         "triggers": [
           {
-            "resourceName": "apigapSoutheast1simpleCalculatorcalculatorpost",
+            "resourceName": "apigapSoutheast1mySimpleCalculatorcalculatorpost",
             "config": {}
           }
         ],
@@ -39,19 +39,19 @@
       }
     },
     "deletedFiles": [],
-    "rootNode": "391f8ca8-c992-4f54-9161-064caa6c0913",
+    "rootNode": "a48f624b-2dad-477b-b172-67a9cb01cd3f",
     "openFiles": [
-      "0aeaf43e-9d8f-441a-87f4-0999695bc573"
+      "d8f47e6e-174d-4ad3-beef-7b81abb3e24a"
     ],
-    "currentFileId": "0aeaf43e-9d8f-441a-87f4-0999695bc573",
+    "currentFileId": "d8f47e6e-174d-4ad3-beef-7b81abb3e24a",
     "resources": {
-      "apigapSoutheast1simpleCalculatorcalculatorpost": {
-        "name": "apigapSoutheast1simpleCalculatorcalculatorpost",
+      "apigapSoutheast1mySimpleCalculatorcalculatorpost": {
+        "name": "apigapSoutheast1mySimpleCalculatorcalculatorpost",
         "type": "API_GATEWAY",
         "config": {
           "selectedRegion": "ap-southeast-1",
           "apiMode": 0,
-          "apiName": "simpleCalculator",
+          "apiName": "mySimpleCalculator",
           "endpointType": "EDGE",
           "resourceMode": 0,
           "resourceName": "calculator",
@@ -60,7 +60,7 @@
           "proxyIntegration": false,
           "enableCORS": false,
           "stageMode": 0,
-          "stageName": "test"
+          "stageName": "prod"
         },
         "globallyEditable": false
       }
@@ -84,19 +84,19 @@
     }
   },
   "PROJECT_META": {
-    "projectName": "Calculator",
-    "projectDescription": "First Serverless Application",
+    "projectName": "calculator",
+    "projectDescription": "first",
     "projectVersion": "1.0.0",
     "projectRegion": "ap-southeast-1",
     "platform": "AWS",
     "platformRegions": {},
-    "lastSave": 1555234418412
+    "lastSave": 1555933030584
   },
   "VCS_STATE": {
     "provider": "GitHub",
     "repo": {
-      "name": "Calculator",
-      "url": "https://github.com/jyotiasha/Calculator"
+      "name": "calculator",
+      "url": "https://github.com/jyotiasha/calculator"
     }
   }
 }
